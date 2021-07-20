@@ -107,7 +107,7 @@ def vidAscii():
 
     with VideoFileClip(f"{input('Name: ')}.{input('Extension: ')}") as vid:
         newVid = vid.fl_image(asciiFilterVid)
-        newVid.write_gif(f'{input("Name your GIF File: ")}.gif', True)
+        newVid.write_gif(f'{input("Name your GIF File: ")}.gif', logger = 'bar')
 
 
 def imgAscii():
