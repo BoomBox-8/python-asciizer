@@ -2,6 +2,10 @@
 
 This is a simple Python program capable of converting images (preferably 1280x720 images due to the algorithms used) to an ASCII-Art style image (emphasis on the last point, the output is merely an image, not text one can copy
 
+## Usage
+
+To use the program, run main.py and type in the numbers corresponding to your choice or file names/extensions when prompted
+Videos converted to ASCII-style GIFs will have the GIFs saved in the program folder. Save supports don't exist for images at this time, the image will only be displayed
 ## Working Principles
 
 The idea of the program is relatively straightforward. The image is scanned in block-sized chunks, where the average intensity (here, intensity refers to how white or black the pixels are, image is converted to a single-channel greyscale image beforehand, for this purpose) in the entire block is found
@@ -17,6 +21,7 @@ An 8x8 block consisting of pure black would have an average intensity of 0, henc
 The box moves sideways across the image, that is, from left to right. Once it reaches the end of the screen, the box moves to the left of screen to the below rows to start the process again. Left to Right, and Up to Down is how these boxes move.
 
 Once the box has moved across the full image and pasted in the suitable ASCII character pictures, the image is ready! Do note that as of now for some odd reasons, the images generated are not capable of being saved properly, so its best these are screenshotted and saved. That being said, feel free to add more ASCII character images, and decide the intensity values at which they should be picked accordingly. This can provide a nice smooth 'gradient' in generated images if you do it right. Very time intensive to find the optimal characters and values to use though
+
 ## FAQ And Other Miscellaneous Info
 **Q1. Why do the ASCII Character images appear to be clipped at the bottom?**
 This is a major shortcoming of the program with which I made these 8x8 images, i.e., MS Paint. GIMP didn't quite cut it right, hence it was not used. The issue is that Paint refuses to let you move the text box you make up and down. Does not help the image is already very small, and that Paint can only zoom in so far. For similar reasons, centering the text was also tough
