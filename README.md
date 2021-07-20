@@ -6,6 +6,7 @@ This is a simple Python program capable of converting images (preferably 1280x72
 
 To use the program, run main.py and type in the numbers corresponding to your choice or file names/extensions when prompted
 Videos converted to ASCII-style GIFs will have the GIFs saved in the program folder. Save supports don't exist for images at this time, the image will only be displayed
+
 ## Working Principles
 
 The idea of the program is relatively straightforward. The image is scanned in block-sized chunks, where the average intensity (here, intensity refers to how white or black the pixels are, image is converted to a single-channel greyscale image beforehand, for this purpose) in the entire block is found
@@ -36,10 +37,6 @@ Luckily the program will scale your image to 1280x720, though keep in mind aspec
 
 **Q4. What is a LURD?**
 Pillow uses a 4-tuple ( like (x,y,w,z), a 4-element tuple ) to define the 'size' and boundaries of methods that make use of bounding boxes. X is called Left, or the co-ordinate of the upper-left corner on the x-axis. On the extreme left, this value would be zero, since the origin is considered to start from the upper-left corner of the image. Y is called Upper, or the co-ordinate of the upper-left corner on the y-axis. Simiarly, w and z are right and down, or the x-axis and y-axis co-ordinates of the bottom-right corner. In an 1280x720 image, the very bottom-right corner would have w,z values of 1280,720. I simply call these values LURD for short (Left,Upper,Right,Down)
-
-
-**Q5. Why are there giant dictionaries for storing each row that makes up an ASCII-Art letter?**
-Ideally, one would store such ASCII Art letters whole, within a list/tuple/dictionary, but the major issue is that it is impossible to draw all the letters all at once such that they are 'on the same row'. One would often have to resort to printing each giant letter one after the other, one below the other. The dictionary stores invidual rows, so that multiple giant letters can be drawn on screen at once, row by row.
 
 **Important**
 Keep in mind, due to the working mechanism described above, an image with very little variance in shades or colors can not be represented in the ASCII-Art style accurately. Similarly, images with a lot of fine detail can also not be expected to be drawn perfectly since we are essentially representing boxes larger than a single pixel with a single character. Contures, curves, shapes, shadows and some gradients can be easily represented however. This is merely a consequence of how ASCII art works. When micro-detail is represented by the arrangement of pixels on the original image, ASCII characters can not produce the same amount of detail
