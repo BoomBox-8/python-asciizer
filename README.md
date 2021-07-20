@@ -40,10 +40,4 @@ Pillow uses a 4-tuple ( like (x,y,w,z), a 4-element tuple ) to define the 'size'
 
 **Important**
 Keep in mind, due to the working mechanism described above, an image with very little variance in shades or colors can not be represented in the ASCII-Art style accurately. Similarly, images with a lot of fine detail can also not be expected to be drawn perfectly since we are essentially representing boxes larger than a single pixel with a single character. Contures, curves, shapes, shadows and some gradients can be easily represented however. This is merely a consequence of how ASCII art works. When micro-detail is represented by the arrangement of pixels on the original image, ASCII characters can not produce the same amount of detail
-
-Also do try out the program on the car image provided! Works like a charm!
-
-Also note that Notepad isn't the best to view this file, formatting is killed off and makes it an unreadable mess
-
-
- 
+That being said however, the car test image provided works well enough, and is a good demonstrator of what the program is capable of.
