@@ -51,7 +51,7 @@ Luckily the program will scale your image to 1280x720, though keep in mind aspec
 
 Pillow uses a 4-tuple ( like (x,y,w,z), a 4-element tuple ) to define the 'size' and boundaries of methods that make use of bounding boxes. X is called Left, or the co-ordinate of the upper-left corner on the x-axis. On the extreme left, this value would be zero, since the origin is considered to start from the upper-left corner of the image. Y is called Upper, or the co-ordinate of the upper-left corner on the y-axis. Simiarly, w and z are right and down, or the x-axis and y-axis co-ordinates of the bottom-right corner. In an 1280x720 image, the very bottom-right corner would have w,z values of 1280,720. I simply call these values LURD for short (Left,Upper,Right,Down)
 
-**Q5. I really don't want to save the GIF but I want to see my video as an ASCII Text Animation. What do I do?
+**Q5. I really don't want to save the GIF but I want to see my video as an ASCII Text Animation. What do I do?**
 
 Unfortunately, due to a weird quirk of moviepy, the function that converts an image to an ASCII style image (and also inserts the next nested-list) strangely only occurs once when Python goes over the fl_image() function, on the very first frame only. It is only when the video is saved that moviepy executes it for all the frames (strangely also does it for frame 1 which it just did before, again). Thus, unless the video is saved, no extra frames = no animation = no video :(
 
